@@ -1,0 +1,30 @@
+/* Reset de estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos de la página */
+ 
+
+  body {
+    display: flex;
+    height: 100vh; 
+    background: linear-gradient(0deg, #F8F9FD 0%, #F8F9FD 52%,#F8F9FD 63%, #F8F9FD 100%);
+
+}
+
+
+
+.frame{
+    height: 100vh;
+    width: 88px;
+    transition: all 0.2s ease-in-out;
+}
+
+.containerP{
+    height: 100vh;
+    width: 100vh;
+    background-color: ;
+}
