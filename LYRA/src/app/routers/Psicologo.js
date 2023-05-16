@@ -4,6 +4,6 @@ const PsicologoControllers = require('../controllers/PsicologoControllers');
 //Get
 router.get('/', PsicologoControllers.Principal);
 
-//Post
+//Post 
 router.post('/Resumenes',PsicologoControllers.Resumenes);
 module.exports= router;
