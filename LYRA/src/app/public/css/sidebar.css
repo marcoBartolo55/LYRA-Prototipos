@@ -11,8 +11,8 @@
     /* ===== Colors ===== */
     --body-color: #1e43a800;
     --sidebar-color: #ffffffa8;
-    --primary-color: #b04ed6;
-    --primary-color-light: #fcf5ff;
+    --primary-color:  rgba(139, 41, 231, 0.692);
+    --primary-color-light: #f0f0f0;
     --toggle-color: #dddddd;
     --text-color: #707070;
 
@@ -24,7 +24,6 @@
 }
 
 body{
-    min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
@@ -54,8 +53,9 @@ body.dark{
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;  
-    backdrop-filter: blur(10px);
-    border-right: solid 1px #d05cfe;
+    backdrop-filter: blur(20px);
+    border-right: solid 1px #7474744b;
+    transform: translate(0px);
 }
 .sidebar.close{
     width: 88px;
@@ -313,3 +313,11 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
+.mini{
+    display: inline-block;
+    font-size: 197x !important;
+}
+.nav-link {
+    word-break: break-all !important;
+
+  }

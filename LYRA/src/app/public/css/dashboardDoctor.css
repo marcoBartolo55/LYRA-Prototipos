@@ -1400,7 +1400,7 @@ table th {
  
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1000px) {
   table {
     border: 0;
   }
@@ -1525,7 +1525,6 @@ table th {
     padding: 0;
     position: absolute;
     width: 1px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     
   }
   
@@ -1533,7 +1532,6 @@ table th {
    
     display: block;
     margin-bottom: .625em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   overflow-x: auto;
   }
   
@@ -1576,6 +1574,12 @@ table th {
     text-align: left;
     margin-left: 22%;
   }
+}
+
+
+.titulosIndiv{
+  background-color: #1778c7 !important;
+  border-radius: 0px !important;
 }
 
 

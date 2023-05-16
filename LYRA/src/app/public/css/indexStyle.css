@@ -124,10 +124,10 @@ nav.sticky .menu-btn{
   height: 100%;
   margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .home .text-one{
+  margin-top: 45%;
   font-size: 25px;
   color: #0E2431;
 }
@@ -411,12 +411,32 @@ footer .text span a:hover{
   box-shadow: rgba(0, 0, 0, 0.15);
   display: none;
 }
+.iconLy{
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  top: 0px;
+  right: 0px;
+  margin: 0 auto;
+  margin-top: 200px;
+  border-radius: 100%;
+  border: solid 1px #ffffff00;
+  margin-right: 50px;
+  background-image: url(https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png);
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.iconLy:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
 
 /* Responsive Media Query */
 @media (max-width: 1190px) {
   section .content{
     width: 85%;
   }
+ 
 }
 @media (max-width: 1000px) {
   .about .about-details{
@@ -436,12 +456,14 @@ footer .text span a:hover{
     margin: 20px 0;
     width: calc(100% / 2 - 20px);
   }
+  
 }
 @media (max-width: 900px) {
   .about .left img{
     height: 350px;
     width: 350px;
   }
+ 
 }
 
 @media (max-width: 750px) {
@@ -507,6 +529,21 @@ footer .text span a:hover{
   .contact .text{
     width: 100%;
 }
+.iconLy{
+  background-color: #d4bfff00;
+  width: 30px;
+  height: 30px;
+  margin: 0px auto;
+  transform: translate(-250px ,-8px);
+  z-index: 1000;
+}
+}
+
+@media (max-width: 460px){
+  .iconLy{
+    background-color: #d4bfff00;
+    background-image:none ;
+  }
 }
 
 @media (max-width: 500px){
@@ -549,4 +586,53 @@ footer .text span a:hover{
   ::-webkit-scrollbar-thumb:hover {
     background-color: #8c4eff;
     
+  }
+
+
+  .faq-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .faq-box:hover {
+    background-color: #00000005;
+  }
+  
+  
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .question h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .icon {
+    font-size: 24px;
+    color: #777;
+    transition: transform 0.3s ease;
+  }
+  
+  .answer {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .answer p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .espacio{
+    padding-left: 10px;
+    padding-right: 10px;
   }

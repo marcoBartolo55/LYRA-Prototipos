@@ -319,9 +319,145 @@ background-color: #c4b0ec38 ;
 }
 
 .login-container{
-  transform: translateY(90px) scale(1);
+  transform:scale(1);
+  margin-top: 60px;
 }
 
 .login-box{
   transform: scale(1);
+}
+
+
+
+
+
+.floating-button {
+  position: fixed;
+  top: 3vh;
+  right: 20px;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #c2acf0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 9999;
+
+}
+
+.floating-button2 {
+  position: fixed;
+  top: 12vh !important;
+  right:  20px;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #eaacf0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 9999;
+
+}
+
+
+.floating-button:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.floating-button2:hover {
+  background-color: #df3636;
+  color: white;
+}
+
+.button-text {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #fff;
+  white-space: nowrap;
+  transition: right 0.3s ease-in-out;
+  color: black;
+}
+
+.floating-button:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+}
+
+.floating-button2:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+}
+
+.icotamano{
+  font-size: 2.9vh !important;
+}
+
+
+.animate-dots span {
+  display: inline-block;
+  opacity: 0;
+  animation: animate-dot 1s ease-in-out infinite;
+}
+
+.animate-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animate-dots span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.animate-dots span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+
+
+.animate-circle {
+  animation: rotate 1.2s infinite linear;
+  pointer-events: none;
+}
+
+
+
+
+
+
+.floating-button:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+}
+
+.floating-button2:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+}
+.colesmuy{
+  height: 580px;
+}
+
+.big{
+  transform: translate(0px);
 }
