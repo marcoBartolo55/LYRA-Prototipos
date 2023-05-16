@@ -1,3 +1,4 @@
+<!-- Marco -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +10,12 @@
     href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
     type="image/svg"
     />
-    <link rel="stylesheet" href="css/LoginLyra.css">
-    <link rel="stylesheet" href="css/dashboardDoctor.css">
+    <link rel="stylesheet" href="/css/LoginLyra.css">
+    <link rel="stylesheet" href="/css/dashboardDoctor.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="css/indexStyle2.css">
+    <link rel="stylesheet" href="/css/indexStyle2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-    <script src="js/scriptIndex.js"></script>
+    <script src="/js/scriptIndex.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,12 +29,11 @@
   <!-- navgaition menu -->
   <nav class="nav">
     <div class="navbar">
-      <div class="logo"><a href="#">Lyra.</a></div>
+      <div class="logo"><a href="/">Lyra.</a></div>
       <ul class="menu">
-        <li><a href="#services">Inicio</a></li>
-        <li class="bomba"><a class="blanquis" href="">Registro</a></li>
-        <li class="bomba"><a class="blanquis" href="">Registro doctor</a></li>
-        <li class="bomba"><a class="blanquis" href="">Inicio de sesión</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li class="bomba"><a class="blanquis" href="/RegistroPacientes">Registro de Pacientes</a></li>
+        <li class="bomba"><a class="blanquis" href="/RegistroPsicologos">Registro de Psicólogos</a></li>
         <div class="cancel-btn">
           <i class="fas fa-times"></i>
         </div>
@@ -53,26 +53,37 @@
     <div class="home-content login-container" >
         <div class="login-box" >
             <div class="Circlelogo"></div>
-            <h2 class="TextInfo">Inicia sesión</h2>
-            <h3 class="DescriptionInfo">Inicia sesión en la <a class="Redirect">aplicación</a></h3>
+            <h2 class="TextInfo">Inicio de sesión</h2>
+            <h3 class="DescriptionInfo">Inicia sesión en <a class="Redirect">LYRA</a></h3>
             <form action="" method="post">
                 <div class="input-container magTop">
-                    <input type="text" name="" required="" class="inputTypes">
-                    <label class="MyPlaceholder">Escribe tu nombre...</label>
+                    <input type="text" name="Usuario"  class="inputTypes">
+                    <label class="MyPlaceholder">Escribe tu nombre de usuario...</label>
                 </div>
                 <div class="input-container">
-                    <input type="password" name="" required="" class="inputTypes">
+                    <input type="password" name="Pass" class="inputTypes">
                     <label class="MyPlaceholder">Contraseña</label>
                 </div>
                 <button type="submit" class="SubmitBtn">Inicia sesión</button>
             </form>
-            <h3 class="DescriptionInfoBottom">Si no has iniciado sesión <a href="" class="Redirect">regístrate</a> </h3>
         </div>
     </div>
     <br>
 </section>
-
-<script src="js/scriptIndex2.js"></script>
+<% if (typeof alerta !== 'undefined') { %>
+  <script src="/js/Alertas.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <%if(alerta === 'Usuario o contraseña incorrectos'){%>
+      <script>
+          UsuarioOConInco();
+      </script>
+  <%}else if(alerta ==='Error Servidor'){%>
+      <script>
+          ErrorServidor();
+      </script>
+  <%}%>
+<%}%>
+<script src="/js/scriptIndex2.js"></script>
 
 </body>
 </html>
