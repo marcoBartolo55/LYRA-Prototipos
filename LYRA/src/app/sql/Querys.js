@@ -27,3 +27,45 @@ db.buscarUsuario = (nombre_usuario) => {
       });
     })
   };
+
+  db.BuscarPacientes = (Paciente)=>{
+    return new Promise(async(resolve, reject)=>{
+      const query = `SELECT * FROM usuario WHERE nombre_usuario ='${Paciente}'`;
+      con.query(query,(error,result)=>{
+        if (error) {
+          console.error(error);
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  };
+
+  db.BuscarEnlaces = (Paciente)=>{
+    return new Promise(async(resolve, reject)=>{
+      const query = `SELECT * FROM psicologo_paciente where nombre_Paciente ='${Paciente}'`;
+      con.query(query,(error,result)=>{
+        if (error) {
+          console.error(error);
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  };
+
+  db.EnlzarPsicoDoc = (Paciente,Psicologo)=>{
+    return new Promise(async(resolve, reject) => {
+      const query = `INSERT INTO psicologo_paciente values(default,'${Paciente}','${Psicologo}')`;
+      con.query(query,(error,result)=>{
+        if (error) {
+          console.error(error);
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    })
+  };

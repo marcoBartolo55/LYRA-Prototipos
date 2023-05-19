@@ -14,3 +14,35 @@ Controllers.Principal = async(req,res,next)=>{
       console.error(error);
     }
   };
+
+  Controllers.EnlazarPaciente=(req,res,next)=>{
+    const Usuario = req.session.usuario;
+    const {Paciente} = req.body;
+    querys.BuscarPacientes(Paciente)
+    .then(result => {
+      if(result.length>0&&result[0].id_tipo_usuario===2){
+        querys.BuscarEnlaces(Paciente)
+        .then(result => {
+          if(result.length===0){
+            querys.EnlzarPsicoDoc(Paciente,Usuario)
+            .then(result => {
+                res.redirect('/Psicologo?alerta=Enlazado');
+            })
+            .catch(error=>{
+              res.redirect('/Psicologo?alerta=Error');
+            })
+          }else{
+            res.redirect('/Psicologo?alerta=Enlazado Anterior');
+          }
+        })
+        .catch(error=>{
+          res.redirect('/Psicologo?alerta=Error');
+        })
+      }else{
+        res.redirect('/Psicologo?alerta=No existe');
+      }
+    })
+    .catch(error=>{
+      res.redirect('/Psicologo?alerta=Error');
+    })
+  };
