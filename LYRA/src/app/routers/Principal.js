@@ -11,7 +11,6 @@ router.get('/RegistroPsicologos',PrincipalControllers.RegistroPsicolosGet);
 //Marco
 router.get('/InicioSesion',PrincipalControllers.InicioSesionGet);
 
-
 //Post
 //Marco
 router.post('/RegistroPacientes',PrincipalControllers.RegistroPacientesPost);
@@ -20,4 +19,6 @@ router.post('/RegistroPsicologos',PrincipalControllers.RegistroPsicologosPost);
 //Marco
 router.post('/InicioSesion',PrincipalControllers.InicioSesionPost);
 
+//Pruebas para conversion de audio a base64 y viceversa
+router.get('/prueba',PrincipalControllers.PruebaAudioGet);
 module.exports= router;
