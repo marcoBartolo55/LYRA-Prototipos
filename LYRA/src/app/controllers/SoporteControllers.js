@@ -88,4 +88,36 @@ Controllers.EditarPass = async(req,res,next) =>{
     return res.redirect('/Soporte/EditarPerfil?alerta=Error Pass');
   }
 };
+
+//Gerente de Soporte
+Controllers.PaginaPrincipalGerenteSoporte= async (req,res,next)=>{
+  const Usuario = req.session.usuario;
+  const TipoUsu = req.session.tipo_usuario;
+  const alerta = req.query.alerta;
+  try{
+    const datosUsuario =await querys.buscarUsuario(Usuario);
+    const ReportesAbiertos = await querys.BuscarReportesAbiertos();
+    const GerentesMantenimiento = await querys.buscarGerentesMantenimiento();
+    const IngenirosSoporte = await querys.buscarIngenierosSoporte();
+    const TodosReportes = await querys.Reportes();
+    const MantenimientoFinalizado = await querys.BuscarReporteMantenimientoFinalizado();
+    const GerenteSop = await querys.buscarGerentesSoporte();
+    res.render('PaginaPrincipalGerenteSoporte',{Usuario,TipoUsu,alerta,datosUsuario,ReportesAbiertos,MantenimientoFinalizado,TodosReportes,GerentesMantenimiento,GerenteSop,IngenirosSoporte,formatearFechaHora});
+  }catch(error){
+    console.log(error);
+  }
+};
+
+//Actualizar reportes GerenteSoporte
+Controllers.ActualizarReportesGerenteSoporte = async(req,res,next)=>{
+  const Usuario = req.session.usuario;
+  const {Id_reporte,UsuarioAsignado,Estatus} = req.body;
+  try{
+    querys.ActualizarReporteGerentes(Id_reporte,UsuarioAsignado,Usuario,Estatus);
+    res.redirect('/Soporte/GerenteSoporte?alerta=Reporte Enviado');
+  }catch(error){
+    console.error(error);
+    res.redirect('/Soporte/GerenteSoporte?alerta=Reporte no Enviado');
+  }
+}
 module.exports = Controllers;
