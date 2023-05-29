@@ -51,5 +51,103 @@ db.RegistrarUsuarios = (nombre, apellido, edad, sexo, correo_electronico, nombre
       });
     });
   };
+//Enrique
+db.BuscarReportesMantenimientoPersonal = (Usuario)=>{
+  return new Promise((resolve, reject) => {
+    con.query(`SELECT r.*, re.descripcion_estatus
+    FROM reporte AS r
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    WHERE r.id_Repore_Estatus = 3 and r.id_usuario_asignado='${Usuario}'`, (error, result) => {
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+};
+
+//Enrique
+db.BuscarReportesFinalizadoMantenimientoPersonal = (Usuario)=>{
+  return new Promise((resolve, reject) => {
+    con.query(`SELECT r.*, re.descripcion_estatus
+    FROM reporte AS r
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    WHERE r.id_Repore_Estatus = 5 and r.id_usuario_asignado='${Usuario}'`, (error, result) => {
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+};
+
+db.BuscarReportesFinalizadoMantenimiento = ()=>{
+  return new Promise((resolve, reject) => {
+    con.query(`SELECT r.*, re.descripcion_estatus
+    FROM reporte AS r
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    WHERE r.id_Repore_Estatus = 5`, (error, result) => {
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+};
+
+db.BuscarReportesMantenimiento = ()=>{
+  return new Promise((resolve, reject) => {
+    con.query(`SELECT r.*, re.descripcion_estatus
+    FROM reporte AS r
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    WHERE r.id_Repore_Estatus = 3`, (error, result) => {
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+};
+//Enrique
+db.BuscarReporteMantenimientoFinalizado = ()=>{
+  return new Promise((resolve, reject) => {
+    con.query(`SELECT r.*, re.descripcion_estatus
+    FROM reporte AS r
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    WHERE r.id_Repore_Estatus = 6`, (error, result) => {
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+};
+
+//Enrique
+db.BuscarReportesEnviadosGerenteMantenimientoPersonal = (Usuario)=>{
+  return new Promise((resolve, reject) => {
+    con.query(`SELECT r.*, re.descripcion_estatus
+    FROM reporte AS r
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    WHERE r.id_Repore_Estatus = 4 or id_Repore_Estatus=6 and id_usuario_manipulo_Reporte='${Usuario}'`, (error, result) => {
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+};
 
 module.exports = db;
