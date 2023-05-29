@@ -11,7 +11,13 @@ function NoPermisos(e){
 
 //Alertas acciones completadas
 
-  
+function UsuarioOConInco(e){
+  swal({
+      icon:'error',
+      title: '¡Error!',
+      text: "Contraseña o usuario incorrectos.",
+  })
+};
 
   
 
